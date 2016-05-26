@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace Halibut
@@ -30,6 +31,11 @@ namespace Halibut
         public string RemoteThumbprint
         {
             get { return remoteThumbprint; }
+        }
+
+        public IEnumerable<string> RemoteThumbprints
+        {
+            get { return new[] {RemoteThumbprint}; }
         }
 
         public override string ToString()
