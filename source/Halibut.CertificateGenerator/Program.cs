@@ -20,7 +20,8 @@ namespace Halibut.CertificateGenerator
             var certificate = CertificateGenerator.Generate(name);
 
             File.WriteAllBytes(file, certificate.Export(X509ContentType.Pkcs12, (string) null));
-
+            File.WriteAllText(file+".thumbprint", certificate.Thumbprint);
+            Console.WriteLine(certificate.Thumbprint);
             return 0;
         }
     }
